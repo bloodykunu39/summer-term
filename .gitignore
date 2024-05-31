@@ -1,3 +1,4 @@
 KARAN_ECG/data_prep/data/a-large-scale-12-lead-electrocardiogram-database-for-arrhythmia-study-1.0.0/
 *.npy
 *.txt
+!README.txt
