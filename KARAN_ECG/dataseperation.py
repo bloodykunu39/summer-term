@@ -1,4 +1,9 @@
 # module
+import os
+import wfdb
+import numpy as np
+import pandas as pd
+
 
 def disease_codes(data):
     disease_codes = data[1]['comments'][2].split()[1].split(',')
@@ -51,7 +56,7 @@ def datasepration_multiple(code:list,claass:list,path : str='data/a-large-scale-
         Returns:
             dict : dictionary of samples {may have multiple diseases} and their respective labels
 
-            
+
         example:
             code = [[426783006, 164889003], [164889003, 426783006, 713427006]]
             claass = ['Myocardial infarction', 'Myocardial infarction and Cardiomyopathy']
@@ -63,6 +68,9 @@ def datasepration_multiple(code:list,claass:list,path : str='data/a-large-scale-
             """
 
     dic = {}
+    path_1_list = os.listdir(path) #list of folder in the path
+
+
     for i in range(len(claass)):
         dic[claass[i]] = []
     for i in range(len(path_1_list)):
